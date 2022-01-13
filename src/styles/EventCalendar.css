@@ -1,0 +1,40 @@
+.event-calendar {
+    border-radius: 5px;
+    box-shadow: #a9a9a9 3px 3px 12px 5px;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: 210px;
+    left: -115px;
+    z-index: 3;
+}
+
+.event-calendar-interface {
+    margin-top: 3%;
+    width: 210px;
+    text-align: center;
+}
+
+.event-calendar-month {
+    font-family: sans-serif;
+    font-size: 100%;
+}
+
+.event-calendar-dates {
+    margin-top: 1%;
+    margin-left: 2%;
+    padding-bottom: 1%;
+    width: 210px;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.grid-cell-event-calendar {
+    width: 28px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    font-size: 12%;
+    cursor: pointer;
+}

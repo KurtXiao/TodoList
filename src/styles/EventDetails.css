@@ -1,0 +1,12 @@
+.event-detail {
+    border: 1px black solid;
+}
+
+.text {
+    width: 90%;
+    height: 70px;
+    resize: none;
+    margin-top: 3%;
+    margin-left: 50%;
+    transform: translate(-50%);
+}

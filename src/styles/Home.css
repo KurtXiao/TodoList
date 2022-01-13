@@ -1,0 +1,72 @@
+body {
+    background-color: #F5F5F5;
+}
+
+.home-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translateX(-50%);
+    border: #C0C0C0 1px solid;
+    height: 57%;
+    width: 28%;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.home-wrapper:hover {
+    box-shadow: #a9a9a9 3px 3px 13px 5px;
+    height: 57.3%;
+    width: 28.1%;
+}
+
+.phrase-I {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 330%;
+    margin-left: 4.3%;
+}
+
+.phrase-II {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 100%;
+    margin-top: 10%;
+    margin-left: 45%;
+}
+
+.user-input {
+    display: block;
+    width: 45%;
+    padding: 5px 10px;
+    line-height: 14px;
+    margin: 0 auto;
+    margin-top: 1.5%;
+    margin-bottom: 2%;
+}
+
+.cue-word {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 90%;
+    margin-left: 24%;
+}
+
+.log-in {
+    margin-top: 7%;
+    margin-left: 30%;
+    border-radius: 5px;
+    border-width: 0;
+    background-color: #dc4c3e;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.sign-up {
+    margin-left: 10%;
+    border-radius: 5px;
+    border-width: 0;
+    background-color: #dc4c3e;
+    color: #fff;
+    padding: 5px 10px;
+}

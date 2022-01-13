@@ -1,0 +1,57 @@
+#calendar {
+    border-radius: 6px;
+    box-shadow: #a9a9a9 3px 3px 13px 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#dates {
+    margin-top: 1%;
+    margin-left: 2%;
+    padding-bottom: 1%;
+    width: 510px;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+#calendar-interface {
+    margin-top: 3%;
+    width: 510px;
+    text-align: center;
+}
+
+.grid-cell {
+    width: 70px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#month {
+    font-family: sans-serif;
+    font-size: 130%;
+}
+
+.arrow {
+    width: 2.3%;
+    height: 2.3%;
+    padding-top: 1%;
+    cursor: pointer;
+}
+.left-double-arrow {
+    margin-left: 6%;
+    float: left;
+}
+.right-double-arrow {
+    margin-right: 6%;
+    float: right;
+}
+.left-arrow {
+    margin-left: 3%;
+    float: left;
+}
+.right-arrow {
+    margin-right: 3%;
+    float: right;
+}

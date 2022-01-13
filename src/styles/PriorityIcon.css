@@ -1,0 +1,10 @@
+.priority-icon-wrapper {
+    display: inline-block;
+    position: relative;
+    margin-left: 3%;
+}
+
+.priority-icon {
+    width: 16px;
+    height: 16px;
+}

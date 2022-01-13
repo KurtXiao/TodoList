@@ -1,0 +1,77 @@
+.addition {
+    height: 35px;
+    position: relative;
+}
+
+.addition-arrow {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 3%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.addition-text {
+    position: absolute;
+    left: 11%;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 90%;
+    width: 72%;
+}
+
+.addition-sign {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.add-label {
+    height: 25px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: #a9a9a9 1px 1px 2px 2px;
+}
+
+.add-label-name {
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+}
+
+.add-label-image {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left : 4%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.add-label-confirm {
+    width: 17px;
+    height: 17px;
+    background-color: white;
+    position: absolute;
+    right : 4.9%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.label-controller {
+    box-shadow: #a9a9a9 1px 1px 3px 3px;
+    border-radius: 10px;
+}
+
+.project-selector {
+    box-shadow: #a9a9a9 1px 1px 3px 3px;
+    border-radius: 10px;
+    margin-top: 3px;
+}
+

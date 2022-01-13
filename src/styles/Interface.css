@@ -1,0 +1,16 @@
+#flex-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 4% 13% 5% 13%;
+}
+
+body {
+    background-color: 	#ffffff;
+}
+
+#calendar-container {
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}

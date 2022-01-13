@@ -1,0 +1,25 @@
+.options-wrapper {
+    position: absolute;
+    z-index: 3;
+    background-color: white;
+    box-shadow: #a9a9a9 3px 3px 12px 5px;
+    border-radius: 5px;
+    padding: 5px 1px;
+}
+
+.option {
+    width: 100px;
+}
+
+.option-name {
+    display: inline-block;
+    width: 65px;
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.option-check {
+    accent-color: #dc4c3e;
+}

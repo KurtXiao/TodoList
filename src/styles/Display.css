@@ -1,0 +1,10 @@
+#display {
+    border: #C0C0C0 0.1px dashed;
+    flex-basis: 60px;
+    flex-grow: 1;
+    margin-right: 8%;
+    height: 350px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 10px;
+}

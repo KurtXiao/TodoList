@@ -1,0 +1,93 @@
+.single-event {
+    border: #dcdcdc 1px solid;
+    box-shadow: #a9a9a9 1px 1px 3px 3px;
+    border-radius: 10px;
+    margin-top: 3px;
+}
+
+.single-event-minimal {
+    position: relative;
+    height: 35px;
+    cursor: pointer;
+}
+
+.check {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    transform: translate(-3%, -50%);
+}
+
+.single-event-title {
+    display: inline-block;
+    width: 250px;
+    position: absolute;
+    left: 78px;
+    top: 50%;
+    transform: translate(-17%, -50%);
+}
+
+.single-event-icon {
+    width: 19px;
+    height: 19px;
+    padding: 3px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.confirm-icon {
+    width: 19px;
+    height: 19px;
+    padding: 3px;
+    margin-left: -5px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+.single-event-icon:hover {
+    background-color: #DCDCDC;
+}
+
+.confirm-icon:hover {
+    background-color: #DCDCDC;
+}
+
+.single-event-text {
+    width: 90%;
+    height: 90px;
+    resize: none;
+    margin-top: 2%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    outline: none;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border-width: 0.5px;
+    border-color: #a9a9a9;
+    
+}
+
+.single-event-icons {
+    position: relative;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    float: right;
+}
+
+.single-event-title-input {
+    width: 40%;
+    margin-top: 4%;
+    margin-left: 4%;
+    border-radius: 5px;
+    border: #a9a9a9 0.5px solid;
+    padding-left: 7px;
+    padding-right: 7px;
+    outline: none;
+}
+
+.single-event-details {
+    height: 152px;
+}
