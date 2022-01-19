@@ -1,4 +1,4 @@
-export const HOST_NAME = 'http://localhost:5000';
+export const HOST_NAME = '18.234.65.90:8080';
 export const INVALID_USERNAME = "INVALID_USERNAME";
 export const WRONG_PASSWORD = "WRONG_PASSWORD";
 export const SINGLE_DATE_CALENDAR = "SINGLE_DATE_CALENDAR";
