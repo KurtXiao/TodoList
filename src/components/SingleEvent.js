@@ -6,16 +6,17 @@ import labelIcon from '../images/label.png';
 import projectIcon from '../images/project.png';
 import priorityIcon from '../images/priority.png';
 import confirmIcon from '../images/confirm.png';
-import EventCalendar from './EventCalendar';
+import Calendar from './Calendar';
 import EventLabelSelection from './EventLabelSelection';
 import EventProjectSelection from './EventProjectSelection';
 import EventPrioritySelection from './EventPrioritySelection';
 import store from '../store';
-import { getPreviousMonthDateObj, getNextMonthDateObj, getPreviousYearDateObj, getNextYearDateObj} from '../utils/calendar';
+import { getPreviousMonthDateObj, getNextMonthDateObj, getPreviousYearDateObj, getNextYearDateObj, goToPrevMonth, goToNextMonth, goToPrevYear, goToNextYear, setActiveDate} from '../utils/calendar';
 import { updateEvent, setState } from '../actions/allEvents';
 import { filterDisplayEvents } from '../actions/displayArea';
 import { filterProject } from '../actions/projectArea';
 import { updateState } from '../utils/server';
+import { SINGLE_DATE_CALENDAR } from '../utils/constants';
 
 class SingleEvent extends React.Component {
     constructor(props) {
@@ -218,19 +219,19 @@ class SingleEvent extends React.Component {
                         <img onClick={this.displayProjects.bind(this)} className='single-event-icon' src={projectIcon}/>
                         <img onClick={this.displayPriority.bind(this)} className='single-event-icon' src={priorityIcon}/>
                         <img onClick={this.confirmChange.bind(this)} src={confirmIcon} className='confirm-icon'/>
-                        <EventCalendar 
-                            eventIndex={this.props.eventIndex} 
-                            display={this.state.calendarDisplay} 
-                            goToPrevMonth={this.goToPrevMonth.bind(this)}
-                            goToNextMonth={this.goToNextMonth.bind(this)}
-                            goToPrevYear={this.goToPrevYear.bind(this)}
-                            goToNextYear={this.goToNextYear.bind(this)}
-                            markDate={this.state.markDate}
+                        <Calendar 
+                            type={SINGLE_DATE_CALENDAR} 
+                            display={this.state.calendarDisplay}
+                            setActiveDate={setActiveDate.bind(this)} 
+                            markDate={this.state.markDate} 
                             activeDate={this.state.activeDate}
-                            setActiveDate={this.setActiveDate.bind(this)}/>
-                        <EventLabelSelection eventIndex={this.props.eventIndex} display={this.state.labelsDisplay} activeLabels={this.state.activeLabels} setActiveLabels={this.setActiveLabels.bind(this)}/>
-                        <EventProjectSelection eventIndex={this.props.eventIndex} display={this.state.projectsDisplay} activeProjects={this.state.activeProjects} setActiveProjects={this.setActiveProjects.bind(this)}/>
-                        <EventPrioritySelection eventIndex={this.props.eventIndex} display={this.state.priorityDisplay} activePriority={this.state.activePriority} setActivePriority={this.setActivePriority.bind(this)}/>
+                            goToPrevMonth={goToPrevMonth.bind(this)}
+                            goToNextMonth={goToNextMonth.bind(this)}
+                            goToPrevYear={goToPrevYear.bind(this)}
+                            goToNextYear={goToNextYear.bind(this)}/>
+                        <EventLabelSelection display={this.state.labelsDisplay} activeLabels={this.state.activeLabels} setActiveLabels={this.setActiveLabels.bind(this)}/>
+                        <EventProjectSelection display={this.state.projectsDisplay} activeProjects={this.state.activeProjects} setActiveProjects={this.setActiveProjects.bind(this)}/>
+                        <EventPrioritySelection display={this.state.priorityDisplay} activePriority={this.state.activePriority} setActivePriority={this.setActivePriority.bind(this)}/>
                     </div>
                 </div>
             </div>

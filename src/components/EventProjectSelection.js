@@ -6,7 +6,7 @@ class EventProjectSelection extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            projects: store.getState().allEvents.projects || [],
+            projects: store.getState()?.allEvents?.projects || [],
         }
     }
     componentDidMount() {

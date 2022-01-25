@@ -10,11 +10,16 @@ import { postToServer } from '../utils/server';
 import { setState } from '../actions/allEvents';
 import { selectProject, filterProject } from '../actions/projectArea';
 import { setDisplayConditions, filterDisplayEvents } from '../actions/displayArea';
-import { dateToDateObj } from '../utils/calendar';
+import { dateToDateObj, setActiveDate, goToPrevYear, goToNextYear, goToPrevMonth, goToNextMonth} from '../utils/calendar';
+import { OVERALL_CALENDAR } from '../utils/constants';
 
 class Interface extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      markDate: dateToDateObj(new Date()),
+      activeDate: dateToDateObj(new Date()),
+    }
   }
   async componentDidMount() {
     let res = await postToServer('/getState', {username: store.getState().userInfo.username});
@@ -26,7 +31,18 @@ class Interface extends React.Component {
   }
   render() {
     return <div>
-      <div id='calendar-container'><Calendar/></div>
+      <div id='calendar-container'>
+      <Calendar 
+        type={OVERALL_CALENDAR} 
+        display={'block'} 
+        setActiveDate={setActiveDate.bind(this)} 
+        markDate={this.state.markDate} 
+        activeDate={this.state.activeDate}
+        goToPrevMonth={goToPrevMonth.bind(this)}
+        goToNextMonth={goToNextMonth.bind(this)}
+        goToPrevYear={goToPrevYear.bind(this)}
+        goToNextYear={goToNextYear.bind(this)}/>
+      </div>
       <div id="flex-container">
         <Display />
         <Project />

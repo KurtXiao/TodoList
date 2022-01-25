@@ -1,10 +1,12 @@
 import React from 'react';
 import '../styles/Control.css';
-import AllLabels from './AllLabels';
-import AllProjects from './AllProjects';
+import AllItems from './AllItems';
 import AddEvent from './AddEvent';
 import SelectProject from './SelectProject';
 import Filter from './Filter';
+import labelSign from '../images/label.png';
+import projectSign from '../images/project.png';
+import { LABEL_ITEM, PROJECT_ITEM } from "../utils/constants";
 
 class Control extends React.Component {
     constructor(props) {
@@ -12,8 +14,8 @@ class Control extends React.Component {
     }
     render() {
         return <div id="control">
-            <AllLabels />
-            <AllProjects />
+            <AllItems type={LABEL_ITEM} itemSign={labelSign}/>
+            <AllItems type={PROJECT_ITEM} itemSign={projectSign} />
             <AddEvent />
             <SelectProject />
             <Filter />

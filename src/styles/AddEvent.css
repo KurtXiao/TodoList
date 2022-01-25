@@ -6,7 +6,6 @@
     height: 25px;
     width: 170px;
     border-radius: 10px;
-
 }
 
 .add-event-text {
@@ -54,6 +53,7 @@
     position: relative;
     box-shadow: #a9a9a9 1px 1px 3px 3px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .test {

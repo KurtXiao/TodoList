@@ -1,7 +1,7 @@
 import SingleDateCalendar from "../components/SingleDateCalendar";
-import SingleDateEventCalendar from "../components/SingleDateEventCalendar";
-import SingleDateAddEvent from '../components/SingleDateAddEvent';
-import { SINGLE_DATE_CALENDAR, SINGLE_DATE_ADD_EVENT, SINGLE_DATE_EVENT_CALENDAR } from '../utils/constants';
+import { OVERALL_CALENDAR } from '../utils/constants';
+import store from "../store";
+import { setDisplayConditions, filterDisplayEvents } from "../actions/displayArea";
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -114,4 +114,61 @@ export function getCurrMonthStartingDay(dateObj) {
 export function getNextMonthStartingDay(dateObj) {
     let nextMonthDateObj = getNextMonthDateObj(dateObj);
     return getCurrMonthStartingDay(nextMonthDateObj);
+}
+
+export function goToPrevYear() {
+    this.setState({
+        markDate: getPreviousYearDateObj(this.state.markDate)
+    })
+}
+
+export function goToNextYear() {
+    this.setState({
+        markDate: getNextYearDateObj(this.state.markDate)
+    })
+}
+
+export function goToPrevMonth() {
+    this.setState({
+        markDate: getPreviousMonthDateObj(this.state.markDate)
+    })
+}
+export function goToNextMonth() {
+    this.setState({
+        markDate: getNextMonthDateObj(this.state.markDate)
+    })
+}
+
+export async function setActiveDate(date, type) {
+    console.log(this);
+    let dateObj = this.state.markDate;
+    dateObj[2] = date;
+    await this.setState({
+        markDate: dateObj,
+        activeDate: dateObj,
+    });
+    if(type === OVERALL_CALENDAR) {
+        await store.dispatch(setDisplayConditions({activeDate: dateObj}));
+        await store.dispatch(filterDisplayEvents(store.getState().allEvents.events));
+    }
+}
+
+export function getDates(markDate, activeDate, type, setActiveDate) {
+    let arr = [];
+    let lastMonthTotalDates = getLastMonthTotalDates(markDate);
+    let currMonthTotalDates = getCurrMonthTotalDates(markDate);
+    let currMonthStartingDay = getCurrMonthStartingDay(markDate);
+    let nextMonthStartingDay = getNextMonthStartingDay(markDate);
+    for(let i = lastMonthTotalDates - currMonthStartingDay + 1; i <= lastMonthTotalDates; ++i) {
+        arr.push(<SingleDateCalendar key={Math.random()} date={i} backgroundColor={'transparent'} fontColor={'grey'} type={type} setActiveDate={()=>{}}/>)
+    }
+    for(let i = 1; i <= currMonthTotalDates; ++i) {
+        if(getMonthYear(markDate) === getMonthYear(activeDate) && i === activeDate[2]) arr.push(<SingleDateCalendar key={Math.random()} date={i} backgroundColor={'#dc4c3e'} fontColor={'white'} type={type} setActiveDate={setActiveDate?.bind(this, i, type)}/>)
+        else arr.push(<SingleDateCalendar key={Math.random()} date={i} backgroundColor={'transparent'} fontColor={'black'} type={type} setActiveDate={setActiveDate?.bind(this, i, type)}/>)
+        
+    }
+    for(let i = 1; i <= 7 - nextMonthStartingDay; ++i) {
+        arr.push(<SingleDateCalendar key={Math.random()} date={i} backgroundColor={'transparent'} fontColor={'grey'} type={type} setActiveDate={()=>{}}/>);
+    }
+    return arr;
 }

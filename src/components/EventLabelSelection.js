@@ -7,7 +7,7 @@ class EventLabelSelection extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            labels: store.getState().allEvents.labels || [],
+            labels: store.getState().allEvents?.labels || [],
         }
     }
     componentDidMount() {

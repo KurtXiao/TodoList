@@ -5,7 +5,6 @@
     border-left: #dcdcdc 1px solid;
     border-right: #dcdcdc 1px solid;
     border-radius: 10px;
-    cursor: pointer;
 }
 
 .single-label:hover {
@@ -37,4 +36,5 @@
     font-size: 50%;
     align-items: center;
     transform: translateY(-50%);
+    cursor: pointer;
 }
