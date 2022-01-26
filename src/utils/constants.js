@@ -1,4 +1,4 @@
-export const HOST_NAME = 'http://3.227.214.87:8080';
+export const HOST_NAME = process.env.REACT_APP_HOST_NAME;
 export const INVALID_USERNAME = "INVALID_USERNAME";
 export const WRONG_PASSWORD = "WRONG_PASSWORD";
 export const OVERALL_CALENDAR = "OVERALL_CALENDAR";
