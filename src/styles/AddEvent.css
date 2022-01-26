@@ -54,6 +54,7 @@
     box-shadow: #a9a9a9 1px 1px 3px 3px;
     border-radius: 10px;
     cursor: pointer;
+    background-color: white;
 }
 
 .test {

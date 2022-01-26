@@ -36,6 +36,8 @@
     position: relative;
     border-radius: 10px;
     box-shadow: #a9a9a9 1px 1px 2px 2px;
+    background-color: white;
+
 }
 
 .add-label-name {
@@ -70,12 +72,14 @@
     box-shadow: #a9a9a9 1px 1px 3px 3px;
     border-radius: 10px;
     margin-bottom: 3px;
+    background-color: white;
 }
 
 .project-selector {
     box-shadow: #a9a9a9 1px 1px 3px 3px;
     border-radius: 10px;
     margin-top: 3px;
+    background-color: white;
 }
 
 .single-project {

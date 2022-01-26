@@ -12,6 +12,7 @@ import { selectProject, filterProject } from '../actions/projectArea';
 import { setDisplayConditions, filterDisplayEvents } from '../actions/displayArea';
 import { dateToDateObj, setActiveDate, goToPrevYear, goToNextYear, goToPrevMonth, goToNextMonth} from '../utils/calendar';
 import { OVERALL_CALENDAR } from '../utils/constants';
+import Snowflakes from './Snowflakes';
 
 class Interface extends React.Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class Interface extends React.Component {
   }
   render() {
     return <div>
+      <Snowflakes />
       <div id='calendar-container'>
       <Calendar 
         type={OVERALL_CALENDAR} 

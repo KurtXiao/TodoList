@@ -17,7 +17,9 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^5",
     "react-scripts": "5.0.0",
+    "react-starry-sky": "^1.0.0",
     "redux": "^4.1.2",
+    "styled-components": "^5.3.3",
     "web-vitals": "^2.1.2"
   },
   "scripts": {
@@ -43,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.16.7"
   }
 }
