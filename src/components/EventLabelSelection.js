@@ -1,42 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/EventLabelSelection.css";
 import store from "../store";
 import { equalArrays } from "../utils/redux";
 
-class EventLabelSelection extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            labels: store.getState().allEvents?.labels || [],
-        }
-    }
-    componentDidMount() {
-        store.subscribe(this.handleLabelsChange.bind(this));
-    }
-    handleLabelsChange() {
+const EventLabelSelection = (props) => {
+    const [state, setState] = useState({
+        labels: store.getState().allEvents?.labels || []
+    });
+    function handleLabelsChange() {
         if(!store.getState().allEvents) return;
         let newLabels = store.getState().allEvents.labels;
-        if(!equalArrays(this.state.labels, newLabels)) {
-            this.setState({
+        if(!equalArrays(state.labels, newLabels)) {
+            setState({
                 labels: [...newLabels]
             });
         }
     }
-    render() {
-        let arr = [];
-        for(let i = 0; i < this.state.labels.length; ++i) {
-            arr.push(
-            <div className='option'>
-                <span className='option-name'>
-                    {this.state.labels[i]}
-                </span>
-                <input type="checkbox" name={this.state.labels[i]} className='option-check' checked={this.props.activeLabels.indexOf(this.state.labels[i]) !== -1} onChange={this.props.setActiveLabels}/>
-            </div>);
-        }
-        return <div className='options-wrapper' style={{display: this.props.display}}>
-            {arr}
-        </div>;
+    useEffect(() => {
+        let unsubscribe = store.subscribe(handleLabelsChange);
+        return (() => {
+            unsubscribe();
+        });
+    })
+    let arr = [];
+    for(let i = 0; i < state.labels.length; ++i) {
+        arr.push(
+        <div className='option'>
+            <span className='option-name'>
+                {state.labels[i]}
+            </span>
+            <input type="checkbox" name={state.labels[i]} className='option-check' checked={props.activeLabels.indexOf(state.labels[i]) !== -1} onChange={props.setActiveLabels}/>
+        </div>);
     }
+    return <div className='options-wrapper' style={{display: props.display}}>
+        {arr}
+    </div>;
 }
 
 export default EventLabelSelection;

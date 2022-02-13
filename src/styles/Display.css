@@ -1,11 +1,11 @@
 #display {
-    border: #ffffff 1px dashed;
+    border: grey 1px dashed;
     flex-basis: 60px;
     flex-grow: 1;
     margin-right: 8%;
     height: 350px;
     overflow-y: scroll;
-    overflow-x: hidden;
     border-radius: 10px;
+    padding: 0 2px;
     background-color: transparent;
 }

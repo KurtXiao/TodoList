@@ -8,19 +8,14 @@ import labelSign from '../images/label.png';
 import projectSign from '../images/project.png';
 import { LABEL_ITEM, PROJECT_ITEM } from "../utils/constants";
 
-class Control extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return <div id="control">
-            <AllItems type={LABEL_ITEM} itemSign={labelSign}/>
-            <AllItems type={PROJECT_ITEM} itemSign={projectSign} />
-            <AddEvent />
-            <SelectProject />
-            <Filter />
-        </div>;
-    }
+const Control = () => {
+    return <div id="control">
+        <AllItems type={LABEL_ITEM} itemSign={labelSign}/>
+        <AllItems type={PROJECT_ITEM} itemSign={projectSign} />
+        <AddEvent />
+        <SelectProject />
+        <Filter />
+    </div>; 
 }
 
 export default Control;

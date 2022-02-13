@@ -1,33 +1,28 @@
 import React from 'react';
 import { OVERALL_CALENDAR } from '../utils/constants';
 
-class SingleDateCalendar extends React.Component {
-    constructor(props) {
-        super(props);
+const SingleDateCalendar = (props) => {
+    if(props.backgroundColor === 'transparent') {
+        return <div onClick={props.setActiveDate} className={props.type === OVERALL_CALENDAR ? 'grid-cell' : 'grid-cell-event-calendar'}>
+            <div style={{
+            color: props.fontColor,
+            backgroundColor: props.backgroundColor}}>
+            {props.date}
+            </div>
+        </div>;
     }
-    render() {
-        if(this.props.backgroundColor === 'transparent') {
-            return <div onClick={this.props.setActiveDate} className={this.props.type === OVERALL_CALENDAR ? 'grid-cell' : 'grid-cell-event-calendar'}>
-                <div style={{
-                color: this.props.fontColor,
-                backgroundColor: this.props.backgroundColor}}>
-                {this.props.date}
-                </div>
-            </div>;
-        }
-        else {
-            return <div onClick={this.props.setActiveDate} className={this.props.type === OVERALL_CALENDAR ? 'grid-cell' : 'grid-cell-event-calendar'}>
-                <div style={{
-                color: this.props.fontColor,
-                backgroundColor: this.props.backgroundColor,
-                marginLeft: '23%',
-                height: '100%',
-                width: '55%',
-                borderRadius: '50%'}}>
-                {this.props.date}
-                </div>
-            </div>;
-        }
+    else {
+        return <div onClick={props.setActiveDate} className={props.type === OVERALL_CALENDAR ? 'grid-cell' : 'grid-cell-event-calendar'}>
+            <div style={{
+            color: props.fontColor,
+            backgroundColor: props.backgroundColor,
+            marginLeft: '23%',
+            height: '100%',
+            width: '55%',
+            borderRadius: '50%'}}>
+            {props.date}
+            </div>
+        </div>;
     }
 }
 

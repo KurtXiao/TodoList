@@ -65,7 +65,7 @@
 
 .event-adder-text {
     position: absolute;
-    left: 11%;
+    left: calc(16px + 5.5%);
     top: 50%;
     transform: translateY(-50%);
     font-size: 90%;

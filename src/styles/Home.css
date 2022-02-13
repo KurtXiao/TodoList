@@ -8,7 +8,8 @@ body {
     top: 15%;
     transform: translateX(-50%);
     border: #C0C0C0 1px solid;
-    height: 57%;
+    min-height: 170px;
+    height: 27vw;
     width: 28%;
     border-radius: 8px;
     background-color: #ffffff;
@@ -16,57 +17,65 @@ body {
 
 .home-wrapper:hover {
     box-shadow: #a9a9a9 3px 3px 13px 5px;
-    height: 57.3%;
+    min-height: 170px;
+    height: 27vw;
     width: 28.1%;
 }
 
 .phrase-I {
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 330%;
-    margin-left: 4.3%;
+    font-size: 3vw;
+    text-align: center;
 }
 
 .phrase-II {
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 100%;
+    font-size: 1.2vw;
     margin-top: 10%;
     margin-left: 45%;
 }
 
 .user-input {
+    font-size: 1vw;
     display: block;
     width: 45%;
-    padding: 5px 10px;
-    line-height: 14px;
     margin: 0 auto;
-    margin-top: 1.5%;
-    margin-bottom: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 0 5px;
 }
 
 .cue-word {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 90%;
-    margin-left: 24%;
+    font-size: 1vw;
+    margin-left: 7.4vw;
 }
 
 .log-in {
-    margin-top: 7%;
-    margin-left: 30%;
+    margin-top: 5%;
+    margin-left: 8.5vw;
     border-radius: 5px;
     border-width: 0;
     background-color: #dc4c3e;
     color: #fff;
     padding: 5px 10px;
+    font-size: 1vw;
+    width: 17%;
+    height: 7%;
 }
 
 .sign-up {
-    margin-left: 10%;
+    margin-top: 5%;
+    margin-left: 2.3vw;
     border-radius: 5px;
     border-width: 0;
     background-color: #dc4c3e;
     color: #fff;
     padding: 5px 10px;
+    font-size: 1vw;
+    width: 17%;
+    height: 7%;
 }

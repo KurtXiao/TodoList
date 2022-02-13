@@ -1,6 +1,7 @@
 #flex-container {
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     flex-direction: row;
     padding: 4% 13% 5% 13%;
 }

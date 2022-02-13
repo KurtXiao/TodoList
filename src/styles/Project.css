@@ -1,11 +1,12 @@
 #project {
-    border: #ffffff 1px dashed;
+    border: gray 1px dashed;
+    padding: 0 2px;
     flex-basis: 60px;
     flex-grow: 1;
     margin-right: 8%;
     height: 350px;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: scroll;
     border-radius: 10px;
     background-color: transparent;
 }

@@ -6,24 +6,19 @@ import { setState } from '../actions/allEvents';
 import { updateState } from '../utils/server';
 import { LABEL_ITEM, PROJECT_ITEM } from "../utils/constants";
 
-class SingleItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    async deleteItem() {
+const SingleItem = (props) => {
+    async function deleteItem() {
         let state = Object.assign({}, store.getState().allEvents);
-        if(this.props.type === LABEL_ITEM) state.labels.splice(state.labels.indexOf(this.props.name), 1);
-        else if(this.props.type === PROJECT_ITEM) state.projects.splice(state.projects.indexOf(this.props.name), 1);
+        if(props.type === LABEL_ITEM) state.labels.splice(state.labels.indexOf(props.name), 1);
+        else if(props.type === PROJECT_ITEM) state.projects.splice(state.projects.indexOf(props.name), 1);
         await store.dispatch(setState(state));
         updateState();
     }
-    render() {
-        return <div className='single-label'>
-            <img className='single-label-image' src={this.props.itemSign} />
-            <span className='single-label-text'>{this.props.name}</span>
-            <img className='single-label-delete' onClick={this.deleteItem.bind(this)} src={deleteSign}/>
-        </div>
-    }
+    return <div className='single-label'>
+        <img className='single-label-image' src={props.itemSign} />
+        <span className='single-label-text'>{props.name}</span>
+        <img className='single-label-delete' onClick={() => deleteItem()} src={deleteSign}/>
+    </div>;
 }
 
 export default SingleItem;

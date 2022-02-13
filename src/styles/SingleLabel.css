@@ -13,7 +13,7 @@
 
 .single-label-text {
     position: absolute;
-    left: 15%;
+    left: calc(16px + 5.5%);
     top: 50%;
     transform: translateY(-50%);
 }

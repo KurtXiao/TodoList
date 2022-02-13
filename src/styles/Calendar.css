@@ -63,36 +63,37 @@
     background-color: white;
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-    width: 210px;
-    left: -115px;
+    width: 70%;
+    left: 20%;
+    top: 120%;
     z-index: 3;
 }
 
 .event-calendar-interface {
     margin-top: 3%;
-    width: 210px;
+    width: 100%;
     text-align: center;
 }
 
 .event-calendar-month {
     font-family: sans-serif;
-    font-size: 100%;
+    font-size: 1vw;
 }
 
 .event-calendar-dates {
     margin-top: 1%;
     margin-left: 2%;
     padding-bottom: 1%;
-    width: 210px;
+    width: 100%;
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
 }
 
 .grid-cell-event-calendar {
-    width: 28px;
-    height: 16px;
-    line-height: 16px;
+    width: 13.3%;
+    height: 165%;
+    line-height: 165%;
     text-align: center;
     font-size: 12%;
     cursor: pointer;

@@ -1,32 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import '../styles/Display.css';
 import store from '../store';
 import { equalArrays, getDisplayEvents } from '../utils/redux';
 
-class Display extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            events: []
-        }
-    }
-    componentDidMount() {
-        store.subscribe(this.handleDisplayAreaEventsChange.bind(this));
-    }
-    async handleDisplayAreaEventsChange() {
+const Display = () => {
+    const [events, setEvents] = useState([]);
+
+    async function handleDisplayAreaEventsChange() {
         if(!store.getState().displayArea) return;
         let newEvents = store.getState().displayArea.events;
-        if(newEvents && !equalArrays(newEvents, this.state.events)) {
-            await this.setState({
-                events: newEvents
-            });
-        }
+        if(newEvents && !equalArrays(newEvents, events)) await setEvents(newEvents);
     }
-    render() {
-        return <div id="display">
-            {getDisplayEvents(this.state.events)}
-        </div>
-    }
+
+    useEffect(() => {
+        let unsubscribe = store.subscribe(handleDisplayAreaEventsChange);
+        return () => unsubscribe();
+    });
+
+    return <div id="display">
+        {getDisplayEvents(events)}
+    </div>
 }
 
 export default Display;

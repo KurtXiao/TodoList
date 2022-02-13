@@ -194,11 +194,11 @@ class AddEvent extends React.Component {
                         <div className='single-event-details'>
                             <textarea name="text" value={this.state.text} onChange={this.handleInputChange.bind(this)} className='single-event-text'></textarea>
                             <div className='single-event-icons'>
-                                <img onClick={this.displayCalendar.bind(this)} className='single-event-icon' src={calendarIcon}/>
-                                <img onClick={this.displayLabels.bind(this)} className='single-event-icon' src={labelIcon}/>
-                                <img onClick={this.displayProjects.bind(this)} className='single-event-icon' src={projectIcon}/>
-                                <img onClick={this.displayPriority.bind(this)} className='single-event-icon' src={priorityIcon}/>
                                 <img onClick={this.addEvent.bind(this)} src={confirmIcon} className='confirm-icon'/>
+                                <img onClick={this.displayPriority.bind(this)} className='single-event-icon' src={priorityIcon}/>
+                                <img onClick={this.displayProjects.bind(this)} className='single-event-icon' src={projectIcon}/>
+                                <img onClick={this.displayLabels.bind(this)} className='single-event-icon' src={labelIcon}/>
+                                <img onClick={this.displayCalendar.bind(this)} className='single-event-icon' src={calendarIcon}/>
                                 <Calendar 
                                     type={SINGLE_DATE_CALENDAR} 
                                     display={this.state.calendarDisplay} 

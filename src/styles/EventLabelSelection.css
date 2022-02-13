@@ -5,16 +5,19 @@
     box-shadow: #a9a9a9 3px 3px 12px 5px;
     border-radius: 5px;
     padding: 5px 1px;
+    left: 50%;
+    top: 120%;
 }
 
 .option {
-    width: 100px;
+    width: 7vw;
+    font-size: 1.2vw;
 }
 
 .option-name {
     display: inline-block;
-    width: 65px;
-    margin-left: 10px;
+    width: 4.5vw;
+    margin-left: 0.7vw;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -22,4 +25,6 @@
 
 .option-check {
     accent-color: #dc4c3e;
+    height: 1vw;
+    width: 1vw;
 }
